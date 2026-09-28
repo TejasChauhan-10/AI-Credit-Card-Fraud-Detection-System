@@ -1,0 +1,169 @@
+# How to Run the AI Fraud Detection & Risk Intelligence Platform
+
+## Step 1: Open the Project
+
+Open the project folder in VS Code:
+
+AI-CREDIT-CARD-FRAUD-DETECTION-SYSTEM
+
+---
+
+## Step 2: Activate the Virtual Environment
+
+Open a terminal and run:
+
+```powershell
+cd C:\Users\ayush\OneDrive\Documents\AI-CREDIT-CARD-FRAUD-DETECTION-SYSTEM
+
+.\venv\Scripts\Activate.ps1
+```
+
+You should see:
+
+```text
+(venv)
+```
+
+at the beginning of the terminal.
+
+---
+
+## Step 3: Start the FastAPI Backend
+
+Open Terminal 1 and run:
+
+```powershell
+cd backend
+
+uvicorn app:app --reload
+```
+
+Expected Output:
+
+```text
+INFO: Uvicorn running on http://127.0.0.1:8000
+```
+
+Keep this terminal running.
+
+---
+
+## Step 4: Start the Streamlit Dashboard
+
+Open Terminal 2 and run:
+
+```powershell
+cd frontend
+
+streamlit run dashboard.py
+```
+
+Expected Output:
+
+```text
+Local URL: http://localhost:8501
+```
+
+Keep this terminal running.
+
+---
+
+## Step 5: Open the Dashboard
+
+Open your browser and visit:
+
+```text
+http://localhost:8501
+```
+
+The dashboard should load successfully.
+
+---
+
+## Step 6: Test the System
+
+Enter transaction details:
+
+* Transaction Type: CASH_OUT
+* Amount: 759701
+* Old Balance Origin: 759701
+* New Balance Origin: 0
+* Old Balance Destination: 1076095
+* New Balance Destination: 1835796
+
+Click:
+
+```text
+Analyze Transaction
+```
+
+Expected Output:
+
+* Prediction: Fraud
+* Fraud Probability: 84%
+* Risk Score: 92
+* Risk Level: HIGH
+
+Investigation Reasons:
+
+* Large transaction amount
+* High balance utilization
+* High-risk transaction type
+
+---
+
+## Important Notes
+
+Always start the backend before the dashboard.
+
+Start Order:
+
+1. FastAPI Backend
+2. Streamlit Dashboard
+3. Open Browser
+
+If the backend is not running, the dashboard will show an API connection error.
+
+---
+
+## Quick Start Commands
+
+### Terminal 1
+
+```powershell
+cd backend
+uvicorn app:app --reload
+```
+
+### Terminal 2
+
+```powershell
+cd frontend
+streamlit run dashboard.py
+```
+
+### Browser
+
+```text
+http://localhost:8501
+```
+
+---
+
+## Project Workflow
+
+User Input
+↓
+Streamlit Dashboard
+↓
+FastAPI Backend
+↓
+Random Forest Model
+↓
+Risk Scoring Engine
+↓
+Fraud Intelligence Report
+↓
+Dashboard Output
+
+The platform performs real-time fraud detection, risk scoring, and fraud investigation analysis through an interactive dashboard.

@@ -1,0 +1,38 @@
+# Dataset
+data/
+
+# Trained Models
+models/*.pkl
+
+# Generated Outputs
+outputs/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Virtual Environment
+venv/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Streamlit Cache
+.streamlit/
+
+# Logs
+*.log
+.History/
+.History
+.Rhistory
